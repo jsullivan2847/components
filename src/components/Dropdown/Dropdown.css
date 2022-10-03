@@ -1,0 +1,13 @@
+.dropdown{
+    position: absolute;
+    top: 30px;
+    height: fit-content;
+    background-color:white;
+    border: solid black 1px;
+    list-style: none;
+    border-radius: 3px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+}
