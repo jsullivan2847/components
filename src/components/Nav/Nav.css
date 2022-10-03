@@ -1,0 +1,28 @@
+.nav{
+    padding: 10px;
+    background-color: gray;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+li{
+    position: relative;
+    padding: 2px;
+    border: solid black 1px;
+    display: flex;
+    justify-content: flex-end;
+}
+li:hover{
+    background-color: wheat;
+    transition: all 100ms;
+}
+.icon{
+    bottom: 8px;
+    left: 22px;
+    position: absolute;
+    background-color: red;
+    width: 12px;
+    height: 12px;
+    margin: 0 0 10px 10px;
+    border-radius:50%;
+}
