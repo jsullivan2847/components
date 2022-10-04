@@ -4,19 +4,18 @@ import Dropdown from '../Dropdown/Dropdown';
 
 export default function Nav({items}) {
 
-    const active = true;
-    const [isHovering, setIsHovering] = useState(false)
-    const handleMouseOver = () => {
-        setIsHovering(true);
-    }
-    const handleMouseLeave = () => {
-        setIsHovering(false);
-    }
 
-    const [currentAmount, setCurrentAmount] = useState(items)
+    const [isOpen, setIsOpen] = useState(false)
+    const [newItems, setNewItems] = useState(true)
+    const handleClick = () => {
+        isOpen ? setIsOpen(false) : setIsOpen(true)
+        if(newItems){
+            setNewItems(false)
+        }
+    }
     
     useEffect(() => {
-        
+        setNewItems(true)
     }, [items])
 
   return (
@@ -28,11 +27,12 @@ export default function Nav({items}) {
             <li>
                 profile
             </li>
-            <li onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className='notif'>
-                {isHovering ? <Dropdown items={items}/> : <></>}
-                {active ? <div className='icon'></div> : <></>}
+            <li onClick={handleClick} className='notif'>
+                {isOpen? <Dropdown items={items}/> : <></>}
+                {newItems ? <div className='icon'></div> : <></>}
                 hello
             </li>
+            <li><button onClick={() => setNewItems(true)}>+ </button></li>
         </ul>
     </nav>
   )

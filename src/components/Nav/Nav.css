@@ -15,6 +15,7 @@ li{
 li:hover{
     background-color: wheat;
     transition: all 100ms;
+    cursor: pointer;
 }
 .icon{
     bottom: 8px;

@@ -1,22 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function Counter({setAmount, amount, items}) {
+export default function Counter({setAmount, amount, items, setItems}) {
 
-
-
-
-    class item {
-        constructor(amount){
-            this.amount = amount;
-        }
-    }
 
     const handleClick = () => {
         setAmount(amount + 1)
-        items.push(amount + 1)
-        console.log(items)
+        setItems(items.concat(amount + 1))
     }
-
 
 
   return (
@@ -25,7 +15,6 @@ export default function Counter({setAmount, amount, items}) {
             {amount}
         </div>
         <button onClick={handleClick}>+</button>
-        {/* <button onClick={()=> setAmount(amount -1)}>-</button> */}
         <button onClick={() => setAmount(0)}>reset</button>
     </div>
   )
