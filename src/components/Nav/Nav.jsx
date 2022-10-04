@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Nav.css'
 import Dropdown from '../Dropdown/Dropdown';
 
-export default function Nav({amount}) {
+export default function Nav({items}) {
 
     const active = true;
     const [isHovering, setIsHovering] = useState(false)
@@ -13,11 +13,11 @@ export default function Nav({amount}) {
         setIsHovering(false);
     }
 
-    const [currentAmount, setCurrentAmount] = useState(amount)
+    const [currentAmount, setCurrentAmount] = useState(items)
     
     useEffect(() => {
-        console.log('new')
-    }, [amount])
+        
+    }, [items])
 
   return (
     <nav>
@@ -29,7 +29,7 @@ export default function Nav({amount}) {
                 profile
             </li>
             <li onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className='notif'>
-                {isHovering ? <Dropdown amount={amount}/> : <></>}
+                {isHovering ? <Dropdown items={items}/> : <></>}
                 {active ? <div className='icon'></div> : <></>}
                 hello
             </li>

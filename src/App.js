@@ -6,10 +6,11 @@ import { useState } from 'react';
 
 function App() {
   const [amount, setAmount] = useState(0)
+  const [items, setItems] = useState([])
   return (
     <div className="App">
-      <Nav amount={amount}/>
-      <Counter setAmount={setAmount} amount={amount}/>
+      <Nav items={items}/>
+      <Counter setAmount={setAmount} amount={amount} items={items}/>
     </div>
   );
 }
